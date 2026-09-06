@@ -1,0 +1,203 @@
+#!/usr/bin/env bash
+# solveit — swap solution files into the working language directory (and vice versa)
+#
+# Usage: solveit [-v] [--lab <n>] [--lang <julia|octave|matlab|python>] [--ex <n>]
+#
+# All flags are optional. Omitting one processes every matching subdirectory:
+#   --lab   omitted → all lab_NN folders
+#   --lang  omitted → all three language folders found in each lab
+#   --ex    omitted → all solutionN folders found in each language folder
+#
+# "matlab" is accepted as an alias for "octave".
+#
+# Directory layout (relative to the script or cwd):
+#   labs/
+#     lab_01/
+#       julia/
+#       octave/
+#       python/
+#         solution1/   ← completed files live here
+#         exercise.py  ← working files live directly in the language folder
+#     lab_02/ ...
+#
+# Installation:
+#   Make it executable: chmod +x solveit
+#   Add it to your PATH, for example, create a link:
+#       ln -s /path/to/solveit /usr/local/bin/solveit
+#     or add its location to your PATH:
+#       export PATH="/path/to/solveit:$PATH"
+
+set -euo pipefail
+
+# ── helpers ───────────────────────────────────────────────────────────────────
+
+usage() {
+    cat >&2 <<EOF
+Usage: $(basename "$0") [-v] [--lab <number>] [--lang <julia|octave|matlab|python>] [--ex <number>]
+
+All flags are optional — omitting one processes every matching subdirectory.
+
+Options:
+  -v, --verbose  Print each file considered, not just swapped/skipped counts.
+  --lab          Lab number (e.g. 3 → lab_03).  Omit to process all labs.
+  --lang         Language: julia, octave, matlab (alias for octave), or python.
+                 Omit to process all languages.
+  --ex           Exercise/solution number (e.g. 2 → solution2).  Omit to process all.
+
+Examples:
+  $(basename "$0") --lab 3 --lang python --ex 1   # one specific solution
+  $(basename "$0") --lab 3 --lang python           # every solution in lab_03/python
+  $(basename "$0") --lang python                   # every lab, every solution, python only
+  $(basename "$0") -v                              # everything, verbose
+EOF
+    exit 1
+}
+
+die() { echo "Error: $*" >&2; exit 1; }
+
+# ── argument parsing ──────────────────────────────────────────────────────────
+
+LAB=""
+LANG=""
+EX=""
+VERBOSE=0
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --lab)      [[ $# -ge 2 ]] || die "--lab requires a value";  LAB="$2";  shift 2 ;;
+        --lang)     [[ $# -ge 2 ]] || die "--lang requires a value"; LANG="$2"; shift 2 ;;
+        --ex)       [[ $# -ge 2 ]] || die "--ex requires a value";   EX="$2";   shift 2 ;;
+        -v|--verbose) VERBOSE=1; shift ;;
+        -h|--help)  usage ;;
+        *) die "Unknown argument: $1" ;;
+    esac
+done
+
+# ── validation ────────────────────────────────────────────────────────────────
+
+if [[ -n "$LAB" ]]; then
+    [[ "$LAB" =~ ^[0-9]+$ && "$LAB" -gt 0 ]] || die "--lab must be a positive integer (got: '$LAB')"
+fi
+if [[ -n "$EX" ]]; then
+    [[ "$EX" =~ ^[0-9]+$ && "$EX" -gt 0 ]]   || die "--ex must be a positive integer (got: '$EX')"
+fi
+if [[ -n "$LANG" ]]; then
+    case "$LANG" in
+        julia|octave|python) ;;
+        matlab) LANG="octave" ;;   # matlab is an alias for octave
+        *) die "--lang must be julia, octave, matlab, or python (got: '$LANG')" ;;
+    esac
+fi
+
+# ── locate labs root ──────────────────────────────────────────────────────────
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if   [[ -d "$SCRIPT_DIR/labs" ]]; then LABS_ROOT="$SCRIPT_DIR/labs"
+elif [[ -d "labs" ]];             then LABS_ROOT="$(pwd)/labs"
+else die "Cannot find a 'labs' directory next to this script or in the current directory."
+fi
+
+# ── build target lists ────────────────────────────────────────────────────────
+
+# Labs
+lab_dirs=()
+if [[ -n "$LAB" ]]; then
+    lab_dir="$LABS_ROOT/lab_$(printf '%02d' "$LAB")"
+    [[ -d "$lab_dir" ]] || die "Lab directory not found: $lab_dir"
+    lab_dirs=("$lab_dir")
+else
+    while IFS= read -r -d '' d; do
+        lab_dirs+=("$d")
+    done < <(find "$LABS_ROOT" -maxdepth 1 -type d -name 'lab_*' -print0 | sort -z)
+    [[ ${#lab_dirs[@]} -gt 0 ]] || die "No lab_NN directories found under $LABS_ROOT"
+fi
+
+# Languages (fixed set; filter to those that actually exist per lab)
+if [[ -n "$LANG" ]]; then
+    lang_filter=("$LANG")
+else
+    lang_filter=("julia" "octave" "python")
+fi
+
+# ── swap function ─────────────────────────────────────────────────────────────
+
+do_swap() {
+    local solution_dir="$1"
+    local lang_dir="$2"
+    local swapped=0 skipped=0
+
+    while IFS= read -r -d '' solution_file; do
+        local filename
+        filename="$(basename "$solution_file")"
+        local lab_file="$lang_dir/$filename"
+
+        if [[ -f "$lab_file" ]]; then
+            local tmp
+            tmp="$(mktemp "$lang_dir/.swap_XXXXXX")"
+            cp -- "$lab_file"      "$tmp"
+            cp -- "$solution_file" "$lab_file"
+            cp -- "$tmp"           "$solution_file"
+            rm -f "$tmp"
+            [[ $VERBOSE -eq 1 ]] && echo "    ✔ swapped  $filename"
+            swapped=$(( swapped + 1 ))
+        else
+            [[ $VERBOSE -eq 1 ]] && echo "    ⚠ skipped  $filename  (no matching file in $(basename "$lang_dir")/)"
+            skipped=$(( skipped + 1 ))
+        fi
+    done < <(find "$solution_dir" -maxdepth 1 -type f -print0 | sort -z)
+
+    echo "    → $swapped swapped, $skipped skipped"
+}
+
+# ── main loop ─────────────────────────────────────────────────────────────────
+
+total_swapped_pairs=0   # count of (solution_dir, lang_dir) pairs actually processed
+
+for lab_dir in "${lab_dirs[@]}"; do
+    lab_name="$(basename "$lab_dir")"
+    lab_printed=0   # lazy header — only print the lab name if we find something under it
+
+    for lang in "${lang_filter[@]}"; do
+        lang_dir="$lab_dir/$lang"
+        [[ -d "$lang_dir" ]] || continue
+
+        # Collect solution directories for this lang
+        solution_dirs=()
+        if [[ -n "$EX" ]]; then
+            sol_dir="$lang_dir/solution$EX"
+            if [[ -d "$sol_dir" ]]; then
+                solution_dirs=("$sol_dir")
+            else
+                # Only warn when the user explicitly requested this solution
+                echo "  ⚠ $lab_name/$lang/solution$EX not found — skipping" >&2
+                continue
+            fi
+        else
+            while IFS= read -r -d '' d; do
+                solution_dirs+=("$d")
+            done < <(find "$lang_dir" -maxdepth 1 -type d -name 'solution*' -print0 | sort -z)
+            [[ ${#solution_dirs[@]} -gt 0 ]] || continue   # no solutions → nothing to do
+        fi
+
+        # Lazy-print the lab header
+        if [[ $lab_printed -eq 0 ]]; then
+            echo "━━━ $lab_name ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            lab_printed=1
+        fi
+
+        echo "  [$lang]"
+        for solution_dir in "${solution_dirs[@]}"; do
+            sol_name="$(basename "$solution_dir")"
+            echo "  $sol_name ↔ $lang/"
+            do_swap "$solution_dir" "$lang_dir"
+            total_swapped_pairs=$(( total_swapped_pairs + 1 ))
+        done
+    done
+done
+
+echo ""
+if [[ $total_swapped_pairs -eq 0 ]]; then
+    echo "Nothing to do — no matching solution directories found."
+else
+    echo "Finished. $total_swapped_pairs solution folder(s) processed."
+fi
