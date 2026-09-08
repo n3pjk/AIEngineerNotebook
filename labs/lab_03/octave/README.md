@@ -4,7 +4,7 @@
 ## Included Files
 
 ```tree
-lab_n/
+lab_03/
 ├── lab3data1.mat - Training set of handwritten digits
 ├── lab3weights.mat - Initial weights for neural network
 ├── README.md - General description of this lab

@@ -4,24 +4,25 @@
 ## Included Files
 
 ```tree
-lab_n/
-├── labndata1.txt - Dataset for first exercise
-├── labndata2.txt - Dataset for second exercise
+lab_05/
+├── lab5data1.mat - Dataset for this lab
 ├── README.md - General description of this lab
 └── octave/
     ├── solution1
-    │   ├── firstFile1.m - Completed first function of first exercise
-    │   └── lastFile1.m - Completed last function of first exercise
-    ├── solution2
-    │   ├── firstFile2.m - Completed first function of second exercise
-    │   └── lastFile2.m - Completed last function of second exercise
-    ├── exercise1.m - Octave script that steps you through the first exercise
-    ├── exercise2.m - Octave script for the second exercise
+    │   ├── learningCurve.m - Completed learning curve generator
+    │   ├── linearRegCostFunction.m - Completed regularized linear regression cost function
+    │   ├── polyFeatures.m - Completed mapping data into polynomial feature space
+    │   └── validationCurve.m - Completed cross validation curve generator
+    ├── exercise1.m - Octave script that steps you through this exercise
+    ├── featureNormalize.m - Feature normalization function
+    ├── fmincg.m - Function minimization routine (similar to fminunc)
+    ├── [1] learningCurve.m - Skeleton to generate a learning curve
+    ├── [1] linearRegCostFunction.m - Skeleton for regularized linear regression cost function
+    ├── plotFit.m - Plot a polynomial fit
+    ├── [1] polyFeatures.m - Skeleton to map data into polynomial feature space
     ├── README.md - Octave specific information - THIS FILE
-    ├── [1] firstFile1.m - Skeleton for first function of first exercise
-    ├── [2] firstFile2.m - Skeleton for first function of second exercise
-    ├── [1] lastFile1.m - Skeleton for last function of first exercise
-    └── [2] lastFile2.m - Skeleton for last function of second exercise
+    ├── trainLinearReg.m - Trains linear regression using your cost function
+    └── [1] validationCurve.m - Skeleton to generate cross validation curve
 ```
 
 [[Top](#lab-5---regularization-and-bias---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
