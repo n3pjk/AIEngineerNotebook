@@ -10,26 +10,25 @@ lab_02/
 ├── README.md - General description of this lab
 └── octave/
     ├── solution1
-    │   ├── warmUpExercise.m - Simple example function in Octave/MATLAB
+    │   ├── costFunction.m - Function to compute the cost of linear regression
     │   ├── plotData.m - Function to display the dataset
-    │   ├── computeCost.m - Function to compute the cost of linear regression
-    │   └── gradientDescent.m - Function to run gradient descent
+    │   ├── predict.m - Predict the label using learned parameters
+    │   └── sigmoid.m - Compute the sigmoid function
     ├── solution2
-    │   ├── computeCostMulti.m - Cost function for multiple variables
-    │   ├── gradientDescentMulti.m - Gradient descent for multiple variables
-    │   ├── featureNormalize.m - Function to normalize features
-    │   └── normalEqn.m - Function to compute the normal equations
+    │   ├── costFunctionReg.m - Regularized cost function
+    │   ├── plotData.m - Function to display the dataset
+    │   ├── predict.m - Predict the label using learned parameters
+    │   └── sigmoid.m - Compute the sigmoid function
     ├── exercise1.m - Octave/MATLAB script that steps you through the first exercise
-    ├── exercise2.m - Octave/MATLAB script for the second exercise
+    ├── exercise2.m - Octave/MATLAB script for second exercise using regularization
+    ├── mapFeature.m - Map feature function to polynomial features
+    ├── plotDecisionBoundary.m - Plots data points with decision boundary
     ├── README.md - Octave/MATLAB specific information - THIS FILE
-    ├── [1] computeCost.m - Function to compute the cost of linear regression
-    ├── [2] computeCostMulti.m - Cost function for multiple variables
-    ├── [2] featureNormalize.m - Function to normalize features
-    ├── [1] gradientDescent.m - Function to run gradient descent
-    ├── [2] gradientDescentMulti.m - Gradient descent for multiple variables
-    ├── [2] normalEqn.m - Function to compute the normal equations
-    ├── [1] plotData.m - Function to display the dataset
-    └── [1] warmUpExercise.m - Simple example function in Octave/MATLAB
+    ├── [1] costFunction.m - Function to compute the cost of linear regression
+    ├── [2] costFunctionReg.m - Regularized cost function
+    ├── [1,2] plotData.m - Function to display the dataset
+    ├── [1,2] predict.m - Predict the label using learned parameters
+    └── [1,2] sigmoid.m - Compute the sigmoid function
 ```
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
