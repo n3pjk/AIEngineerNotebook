@@ -24,7 +24,7 @@ clear ; close all; clc
 %  The first two columns contains the X values and the third column
 %  contains the label (y).
 
-data = load('lab2data2.txt');
+data = load('../lab2data2.txt');
 X = data(:, [1, 2]); y = data(:, 3);
 
 plotData(X, y);
