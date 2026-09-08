@@ -1,8 +1,8 @@
-%% Machine Learning Online Class - Exercise 2: Logistic Regression
+%% Machine Learning Online Class - Exercise 2: Logistic Regression with Regularization
 %
 %  Instructions
 %  ------------
-% 
+%
 %  This file contains code that helps you get started on the second part
 %  of the exercise which covers regularization with logistic regression.
 %
@@ -24,12 +24,12 @@ clear ; close all; clc
 %  The first two columns contains the X values and the third column
 %  contains the label (y).
 
-data = load('ex2data2.txt');
+data = load('lab2data2.txt');
 X = data(:, [1, 2]); y = data(:, 3);
 
 plotData(X, y);
 
-% Put some labels 
+% Put some labels
 hold on;
 
 % Labels and Legend
@@ -43,8 +43,8 @@ hold off;
 
 %% =========== Part 1: Regularized Logistic Regression ============
 %  In this part, you are given a dataset with data points that are not
-%  linearly separable. However, you would still like to use logistic 
-%  regression to classify the data points. 
+%  linearly separable. However, you would still like to use logistic
+%  regression to classify the data points.
 %
 %  To do so, you introduce more features to use -- in particular, you add
 %  polynomial features to our data matrix (similar to polynomial
@@ -61,6 +61,8 @@ X = mapFeature(X(:,1), X(:,2));
 initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1
+% Try varying values of lambda from 100 down to 0.01 to see how the decision
+% boundary varies
 lambda = 1;
 
 % Compute and display initial cost and gradient for regularized logistic
@@ -74,8 +76,8 @@ pause;
 
 %% ============= Part 2: Regularization and Accuracies =============
 %  Optional Exercise:
-%  In this part, you will get to try different values of lambda and 
-%  see how regularization affects the decision coundart
+%  In this part, you will get to try different values of lambda and
+%  see how regularization affects the decision boundary
 %
 %  Try the following values of lambda (0, 1, 10, 100).
 %
@@ -87,7 +89,7 @@ pause;
 initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1 (you should vary this)
-lambda = 100;
+lambda = 1;
 
 % Set Options
 options = optimset('GradObj', 'on', 'MaxIter', 400);
