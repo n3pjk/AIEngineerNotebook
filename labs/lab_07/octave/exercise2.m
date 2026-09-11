@@ -29,7 +29,7 @@ fprintf('Visualizing example dataset for PCA.\n\n');
 
 %  The following command loads the dataset. You should now have the 
 %  variable X in your environment
-load ('ex7data1.mat');
+load ('../lab7data1.mat');
 
 %  Visualize the example dataset
 plot(X(:, 1), X(:, 2), 'bo');
@@ -110,7 +110,7 @@ pause;
 fprintf('\nLoading face dataset.\n\n');
 
 %  Load Face dataset
-load ('ex7faces.mat')
+load ('../ex7faces.mat')
 
 %  Display the first 100 faces in the dataset
 displayData(X(1:100, :));
@@ -189,10 +189,10 @@ close all; close all; clc
 
 % Re-load the image from the previous exercise and run K-Means on it
 % For this to work, you need to complete the K-Means assignment first
-A = double(imread('bird_small.png'));
+A = double(imread('../bird_small.png'));
 
 % If imread does not work for you, you can try instead
-%   load ('bird_small.mat');
+%   load ('../bird_small.mat');
 
 A = A / 255;
 img_size = size(A);

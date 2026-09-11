@@ -4,24 +4,38 @@
 ## Included Files
 
 ```tree
-lab_n/
-├── labndata1.txt - Dataset for first exercise
-├── labndata2.txt - Dataset for second exercise
+lab_07/
+├── bird_small.mat - Alternate form of example image
+├── bird_small.png - Example image
+├── lab7data1.mat - Dataset for PCA
+├── lab7data2.mat - Dataset for K-Means
+├── lab7faces.mat - Faces dataset
 ├── README.md - General description of this lab
 └── octave/
     ├── solution1
-    │   ├── firstFile1.m - Completed first function of first exercise
-    │   └── lastFile1.m - Completed last function of first exercise
+    │   ├── computeCentroids.m - Completed compute centroid means
+    │   ├── findClosestCentroids.m - Completed finding closest centroids
+    │   ├── kMeansInitCentroids.m - Completed initialization of K-Means centroids
+    │   └── pca.m - Completed performing principal component analysis
     ├── solution2
-    │   ├── firstFile2.m - Completed first function of second exercise
-    │   └── lastFile2.m - Completed last function of second exercise
+    │   ├── kMeansInitCentroids.m - Completed feature normalization of a matrix
+    │   ├── projectData.m - Completed project dataset into lower dimensional space
+    │   └── recoverData.m - Completed recovery of original data from projection
+    ├── [1] computeCentroids.m - Skeleton to compute centroid means
+    ├── displayData.m - Displays 2D data stored in a matrix
+    ├── drawLine.m - Draws a line over an existing figure
     ├── exercise1.m - Octave script that steps you through the first exercise
     ├── exercise2.m - Octave script for the second exercise
+    ├── [1] findClosestCentroids.m - Skeleton for finding closest centroids
+    ├── featureNormalize.m - Normalize the features of a matrix
+    ├── [1,2] kMeansInitCentroids.m - Skeleton for initialization of K-Means centroids
+    ├── [1] pca.m - Skeleton for performing principal component analysis
+    ├── plotDataPoints.m - Initialization for K-Means centroids
+    ├── plotProgressKMeans.m - Plots each step of K-Means as it proceeds
+    ├── [2] projectData.m - Skeleton for projecting dataset into lower dimensional space
     ├── README.md - Octave specific information - THIS FILE
-    ├── [1] firstFile1.m - Skeleton for first function of first exercise
-    ├── [2] firstFile2.m - Skeleton for first function of second exercise
-    ├── [1] lastFile1.m - Skeleton for last function of first exercise
-    └── [2] lastFile2.m - Skeleton for last function of second exercise
+    ├── [2] recoverData.m - Skeleton for recovering original data from projection
+    └── runKMeans.m - Runs the K-Means algorithm
 ```
 
 [[Top](#lab-7---k-means-clustering-and-principal-component-analysis---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
