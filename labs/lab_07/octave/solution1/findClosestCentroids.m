@@ -8,6 +8,9 @@ function idx = findClosestCentroids(X, centroids)
 % Set useful values
 K = size(centroids, 1);
 [m n] = size(X);
+% alternative to above size function:
+% m = size(X, 1);
+% n = size(X, 2);
 
 % You need to return the following variables correctly.
 idx = zeros(m, 1);
