@@ -1,4 +1,5 @@
-# Lab n - Title - Python
+# Lab 9 - Recurrent Neural Networks - Python
+
 [[Home](../../../README.md) | [Back](../README.md)]
 
 ## Included Files
@@ -24,4 +25,4 @@ lab_n/
     └── [2] lastFile2.py - Skeleton for last function of second exercise
 ```
 
-[[Top](#lab-n---title---python) | [Back](../README.md) | [Home](../../../README.md)]
+[[Top](#lab-9---recurrent-neural-networks---python) | [Back](../README.md) | [Home](../../../README.md)]

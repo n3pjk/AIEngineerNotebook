@@ -1,4 +1,5 @@
-# Lab n - Title - Julia
+# Lab 12 - N-Grams - Julia
+
 [[Home](../../../README.md) | [Back](../README.md)]
 
 ## Included Files
@@ -24,4 +25,4 @@ lab_n/
     └── [2] lastFile2.jl - Skeleton for last function of second exercise
 ```
 
-[[Top](#lab-n---title---julia) | [Back](../README.md) | [Home](../../../README.md)]
+[[Top](#lab-12---n-grams---julia) | [Back](../README.md) | [Home](../../../README.md)]

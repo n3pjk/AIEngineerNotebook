@@ -1,4 +1,5 @@
-# Lab n - Title
+# Lab 10 - Gated Recurrent Unit
+
 [[Home](../../README.md)]
 
 ## Introduction
@@ -9,4 +10,4 @@
 - [MATLAB/Octave](octave/README.md)
 - [Python](python/README.md)
 
-[[Top](#lab-n---title) | [Home](../../README.md)]
+[[Top](#lab-10---gated-recurrent-unit) | [Home](../../README.md)]

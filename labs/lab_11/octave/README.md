@@ -1,4 +1,5 @@
-# Lab n - Title - MATLAB/Octave
+# Lab 11 - Bag of Words - MATLAB/Octave
+
 [[Home](../../../README.md) | [Back](../README.md)]
 
 ## Included Files
@@ -24,4 +25,4 @@ lab_n/
     └── [2] lastFile2.m - Skeleton for last function of second exercise
 ```
 
-[[Top](#lab-n---title---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
+[[Top](#lab-11---bag-of-words---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]

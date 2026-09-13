@@ -12,9 +12,9 @@ Labs for the book, "AI Engineer's Notebook", by Paul Knight.
 - [Lab 6](labs/lab_06/README.md) Support Vector Machines
 - [Lab 7](labs/lab_07/README.md) K-Means Clustering and Principal Component Analysis
 - [Lab 8](labs/lab_08/README.md) Anomaly Detection and Recommender Systems
-- [Lab 9](labs/lab_09/README.md)
-- [Lab 10](labs/lab_10/README.md)
-- [Lab 11](labs/lab_11/README.md)
-- [Lab 12](labs/lab_12/README.md)
-- [Lab 13](labs/lab_13/README.md)
+- [Lab 9](labs/lab_09/README.md) Recurrent Neural Networks
+- [Lab 10](labs/lab_10/README.md) Gated Recurrent Unit
+- [Lab 11](labs/lab_11/README.md) Bag of Words
+- [Lab 12](labs/lab_12/README.md) N-Grams
+- [Lab 13](labs/lab_13/README.md) Transformers
 - [Lab 14](labs/lab_14/README.md)

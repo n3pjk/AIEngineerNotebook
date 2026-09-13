@@ -1,4 +1,5 @@
 # Lab 0 - Tooling Setup
+
 [[Home](../../README.md)]
 
 ## Contents
@@ -13,7 +14,9 @@
       - [Formulae, Taps and Casks](#formulae-taps-and-casks)
     - [Windows](#windows)
   - [GitHub](#github)
+    - [Extensions](#extensions)
   - [VS Code](#vs-code)
+    - [Extensions](#extensions-1)
   - [Language Selection](#language-selection)
 
 ## Operating Systems

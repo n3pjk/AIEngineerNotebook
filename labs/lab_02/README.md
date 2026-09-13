@@ -1,4 +1,5 @@
 # Lab 2 - Logistic Regression
+
 [[Home](../../README.md)]
 
 ## Introduction

@@ -1,4 +1,5 @@
-# Lab n - Title
+# Lab 12 - N-Grams
+
 [[Home](../../README.md)]
 
 ## Introduction
@@ -9,4 +10,4 @@
 - [MATLAB/Octave](octave/README.md)
 - [Python](python/README.md)
 
-[[Top](#lab-n---title) | [Home](../../README.md)]
+[[Top](#lab-12---n-grams) | [Home](../../README.md)]

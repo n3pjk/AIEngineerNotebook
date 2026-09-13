@@ -1,4 +1,5 @@
 # Lab 6 - Support Vector Machines
+
 [[Home](../../README.md)]
 
 ## Introduction
