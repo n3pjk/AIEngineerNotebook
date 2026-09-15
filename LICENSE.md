@@ -1,6 +1,8 @@
-MIT License
+# MIT License
 
-Copyright (c) 2026 Paul Knight
+[[Back](README.md)]
+
+## Copyright (c) 2026 Paul Knight
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

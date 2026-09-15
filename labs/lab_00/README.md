@@ -1,25 +1,39 @@
-# Lab 0 - Tooling Setup
+# Lab 0 - Tooling Setup<!-- omit in toc -->
 
 [[Home](../../README.md)]
 
-## Contents
+## Contents <!-- omit in toc -->
 
-- [Lab 0 - Tooling Setup](#lab-0---tooling-setup)
-  - [Contents](#contents)
-  - [Operating Systems](#operating-systems)
-    - [Linux](#linux)
-      - [Package Managers](#package-managers)
-    - [MacOS](#macos)
-      - [Installing Homebrew](#installing-homebrew)
-      - [Formulae, Taps and Casks](#formulae-taps-and-casks)
-    - [Windows](#windows)
-  - [GitHub](#github)
-    - [Extensions](#extensions)
-  - [VS Code](#vs-code)
-    - [Extensions](#extensions-1)
-  - [Language Selection](#language-selection)
+- [Operating Systems](#operating-systems)
+  - [Windows](#windows)
+  - [Linux](#linux)
+    - [Package Managers](#package-managers)
+  - [MacOS](#macos)
+    - [Installing Homebrew](#installing-homebrew)
+    - [Formulae, Taps and Casks](#formulae-taps-and-casks)
+- [GitHub](#github)
+  - [Install Tools and CLI](#install-tools-and-cli)
+    - [Linux](#linux-1)
+    - [MacOS](#macos-1)
+  - [Verify](#verify)
+  - [Configure](#configure)
+  - [View Global Configuration](#view-global-configuration)
+  - [Extensions](#extensions)
+- [VS Code](#vs-code)
+  - [Extensions](#extensions-1)
+- [Language Selection](#language-selection)
 
 ## Operating Systems
+
+### Windows
+
+[[Top](#lab-0---tooling-setup) | [Home](../../README.md)]
+
+Windows has improved meaningfully for AI development, largely through Windows Subsystem for Linux (WSL2). Running a full Ubuntu environment inside Windows, with GPU passthrough via CUDA on WSL2, is now a real and workable option. Many developers run their machine learning stacks entirely inside WSL2 and barely touch the Windows host. For practitioners already on Windows, such as enterprise and educational settings, this lowers the switching cost considerably. DirectML also extends GPU acceleration to AMD and Intel GPUs that CUDA doesn't support, which matters for consumer hardware diversity.
+
+Unfortunately, WSL2, while good, adds a layer of abstraction that occasionally surfaces friction,like networking quirks, filesystem performance penalties when crossing the WSL/Windows boundary, and occasional driver interactions that don't exist on native Linux. It's better than it was, but not seamless. Outside of WSL2, native Windows Python environments can be a dependency management nightmare: path issues, build tool requirements (Visual C++ runtimes, etc.), and packages that assume Unix paths or shell behavior. Containerization helps, but adds its own complexity.
+
+Ultimately, the best scenario for Windows AI development is finding a solution that runs a Linux environment. Therefore, we will not focus on Windows, but on Linux instead.
 
 ### Linux
 
@@ -101,22 +115,47 @@ brew upgrade
 brew install [package-name]
 ```
 
-### Windows
-
-[[Top](#lab-0---tooling-setup) | [Home](../../README.md)]
-
-Windows has improved meaningfully for AI development, largely through Windows Subsystem for Linux (WSL2). Running a full Ubuntu environment inside Windows, with GPU passthrough via CUDA on WSL2, is now a real and workable option. Many developers run their machine learning stacks entirely inside WSL2 and barely touch the Windows host. For practitioners already on Windows, such as enterprise and educational settings, this lowers the switching cost considerably. DirectML also extends GPU acceleration to AMD and Intel GPUs that CUDA doesn't support, which matters for consumer hardware diversity.
-
-Unfortunately, WSL2, while good, adds a layer of abstraction that occasionally surfaces friction,like networking quirks, filesystem performance penalties when crossing the WSL/Windows boundary, and occasional driver interactions that don't exist on native Linux. It's better than it was, but not seamless. Outside of WSL2, native Windows Python environments can be a dependency management nightmare: path issues, build tool requirements (Visual C++ runtimes, etc.), and packages that assume Unix paths or shell behavior. Containerization helps, but adds its own complexity.
-
-Ultimately, the best scenario for Windows AI development is to find a way to run a Linux environment within it. Therefore, we will not place any emphasis on Windows, focusing on Linux instead.
-
 ## GitHub
 
 [[Top](#lab-0---tooling-setup) | [Home](../../README.md)]
 
 Before you can clone this repo down to your desktop, you will need to install
 the GitHub tools.
+
+### Install Tools and CLI
+
+#### Linux
+
+```bash
+apt update
+apt install git gh
+```
+
+#### MacOS
+
+```bash
+brew update
+brew install git gh
+```
+
+### Verify
+
+```bash
+git --version
+```
+
+### Configure
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+### View Global Configuration
+
+```bash
+git config --global --list
+```
 
 ### Extensions
 
@@ -128,6 +167,7 @@ The following VS Code Extensions are useful when working with GitHub and its rep
 * GitHub Copilot modernization by Microsoft - Upgrade and migrate your applications to Azure
 * GitHub Pull Requests by GitHub - Pull Request and Issue Provider for GitHub
 * GitHub Repositories by GitHub - Remotely browse and edit any GitHub repository
+* gitignore by CodeZombie - Pulls .gitignore templates from GitHub's [gitignore](https://github.com/github/gitignore) repository
 * GitLens - Git supercharged by GitKraken - Supercharge Git within VS Code
 
 ## VS Code
@@ -147,6 +187,8 @@ The following VS Code Extensions are useful across all languages:
 * Print by PD Consulting - Prints rendered Markdown and colored code
 * Rainbow CSV by mechatroner - Highlight CSV and TSV files. Run SQL-like queries
 * Trailing Spaces by Shardul Mahadik - Highlights whitespace at the end of a line
+
+If you like VI or Vim
 * Vim by vscodevim - Vim emulation for Visual Studio Code
 
 ## Language Selection
