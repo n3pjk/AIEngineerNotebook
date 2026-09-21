@@ -1,25 +1,26 @@
-# Lab 1 - Linear Regression - MATLAB/Octave <!-- omit in toc -->
+# Lab 1 - Linear Regression - MATLAB/Octave
 
 [[Home](../../../README.md) | [Back](../README.md)]
 
 ## Contents <!-- omit in toc -->
 
-- [Included Files](#included-files)
-  - [Where To Get Help](#where-to-get-help)
-- [A Simple Octave/MATLAB Function](#a-simple-octavematlab-function)
-- [1 - Linear Regression With One Variable](#1---linear-regression-with-one-variable)
-  - [1.1 - Plotting The Data](#11---plotting-the-data)
-  - [1.2 - Gradient Descent](#12---gradient-descent)
-    - [1.2.1 - Implementation](#121---implementation)
-    - [1.2.2 - Computing The Cost](#122---computing-the-cost)
-    - [1.2.3 - Computing Gradient Descent](#123---computing-gradient-descent)
-  - [1.3 - Debugging](#13---debugging)
-  - [1.4 - Visualizing The Cost](#14---visualizing-the-cost)
-- [2 - Linear Regression With Multiple Variables](#2---linear-regression-with-multiple-variables)
-  - [2.1 - Feature Normalization](#21---feature-normalization)
-  - [2.2 - Gradient Descent](#22---gradient-descent)
-    - [2.2.1 - Selecting Learning Rates](#221---selecting-learning-rates)
-  - [2.3 - Normal Equations](#23---normal-equations)
+- [Lab 1 - Linear Regression - MATLAB/Octave](#lab-1---linear-regression---matlaboctave)
+  - [Included Files](#included-files)
+    - [Where To Get Help](#where-to-get-help)
+  - [A Simple Octave/MATLAB Function](#a-simple-octavematlab-function)
+  - [1 - Linear Regression With One Variable](#1---linear-regression-with-one-variable)
+    - [1.1 - Plotting The Data](#11---plotting-the-data)
+    - [1.2 - Gradient Descent](#12---gradient-descent)
+      - [1.2.1 - Implementation](#121---implementation)
+      - [1.2.2 - Computing The Cost](#122---computing-the-cost)
+      - [1.2.3 - Computing Gradient Descent](#123---computing-gradient-descent)
+    - [1.3 - Debugging](#13---debugging)
+    - [1.4 - Visualizing The Cost](#14---visualizing-the-cost)
+  - [2 - Linear Regression With Multiple Variables](#2---linear-regression-with-multiple-variables)
+    - [2.1 - Feature Normalization](#21---feature-normalization)
+    - [2.2 - Gradient Descent](#22---gradient-descent)
+      - [2.2.1 - Selecting Learning Rates](#221---selecting-learning-rates)
+    - [2.3 - Normal Equations](#23---normal-equations)
 
 ## Included Files
 
