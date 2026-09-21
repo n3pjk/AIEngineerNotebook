@@ -1,5 +1,5 @@
-%% Machine Learning Online Class
-%  Exercise 1: Linear regression with multiple variables
+%% Lab 1
+%  Exercise 2: Linear regression with multiple variables
 %
 %  Instructions
 %  ------------
