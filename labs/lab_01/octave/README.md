@@ -58,6 +58,8 @@ This lab is composed of two exercises, `exercise1.m`, which covers linear regres
 
 ### Where To Get Help
 
+[[Top](#lab-1---linear-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
+
 You can use either Octave or MATLAB to complete this lab. Octave is a free alternative to MATLAB. Both are high-level programming languages, well suited for numerical computations. If you wish to use either of these environments but have not installed them yet, see [Lab 0](../../lab_00/README.md), which includes instructions for [Octave](../../lab_00/octave.md).
 
 Information on functions is available from within the Octave/MATLAB GUI by typing `help [function_name]` at the prompt. For example, `help plot` provides information on plotting. Further information for Octave functions can be found in the [Octave Documentation](http://www.gnu.org/software/octave/doc/interpreter/). Similarly, additional MATLAB information is at [MATLAB Documentation](http://www.mathworks.com/help/matlab/?refresh=true).
@@ -217,6 +219,8 @@ Your final values for $\theta$ will also be used to make predictions on profits 
 
 ### 1.3 - Debugging
 
+[[Top](#lab-1---linear-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
+
 Here are some things to keep in mind as you implement gradient descent.
 
 * Octave/MATLAB array indices start from one, not zero. If you’re storing $\theta_0$ and $\theta_1$ in a vector called `theta`, the values will be `theta(1)` and `theta(2)`.
@@ -228,8 +232,6 @@ Here are some things to keep in mind as you implement gradient descent.
 </figure>
 
 * By default, Octave/MATLAB interprets math operators to be matrix operators. This is a common source of size incompatibility errors. If you don’t want matrix multiplication, you need to add the “dot” notation to specify this to Octave/MATLAB. For example, `A*B` does a matrix multiply, while `A.*B` does an element-wise multiplication.
-
-[[Top](#lab-1---linear-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
 ### 1.4 - Visualizing The Cost
 
