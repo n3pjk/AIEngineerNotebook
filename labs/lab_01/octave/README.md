@@ -148,7 +148,7 @@ plot(..,[your options here],.., ‘rx’);
 ```
 
 <figure id="fig-1">
-  <img src="../assets/training_data.svg" alt="Scatter plot of training data">
+  <img src="assets/training_data.svg" alt="Scatter plot of training data">
   <figcaption>Figure 1: Scatter plot of training data</figcaption>
 </figure>
 
@@ -228,7 +228,7 @@ Here are some things to keep in mind as you implement gradient descent.
 * If you are seeing many errors at runtime, inspect your matrix operations to make sure that you’re adding and multiplying matrices of compatible dimensions. Printing the dimensions of variables with the `size` command will help you debug.
 
 <figure id="fig-2">
-  <img src="../assets/linear_regression.svg" alt="Training data with fitted line">
+  <img src="assets/linear_regression.svg" alt="Training data with fitted line">
   <figcaption>Figure 2: Training data with fitted line</figcaption>
 </figure>
 
@@ -260,8 +260,8 @@ After these lines are executed, you will have a 2-D array of $J(\theta)$ values.
 <figure id="fig-3">
 <table>
   <tr>
-    <td><img src="../assets/surface.svg" alt="Figure 3a"><br><center>(a) Surface</center></td>
-    <td><img src="../assets/contour.svg" alt="Figure 3b"><br><center>(b) Contour, showing minimum</center></td>
+    <td><img src="assets/surface.svg" alt="Figure 3a"><br><center>(a) Surface</center></td>
+    <td><img src="assets/contour.svg" alt="Figure 3b"><br><center>(b) Contour, showing minimum</center></td>
   </tr>
 </table>
 <figcaption>Figure 3: Cost Function</figcaption>
@@ -346,7 +346,7 @@ The next phase in `exercise2.m` will call your `gradientDescent.m` function and 
 If you picked a learning rate within a good range, your plot look similar to [Figure 4](#fig-4). If your graph looks very different, especially if your value of $J(\theta)$ increases or even blows up, adjust your learning rate and try again. We recommend trying values of the learning rate $\alpha$ on a log-scale, at multiplicative steps of about 3 times the previous value (i.e., 0.3, 0.1, 0.03, 0.01 and so on). You may also want to adjust the number of iterations you are running if that will help you see the overall trend in the curve.
 
 <figure id="fig-4">
-  <img src="../assets/convergence.svg" alt="Figure 4">
+  <img src="assets/convergence.svg" alt="Figure 4">
   <figcaption>Figure 4: Convergence of gradient descent with an appropriate learning rate</figcaption>
 </figure>
 
