@@ -1,5 +1,24 @@
 # Lab 1
 # Exercise 1: Linear Regression
+#
+#  Instructions
+#  ------------
+#
+#  This file contains code that helps you get started on the
+#  linear exercise. You will need to complete the following functions
+#  in this exercise:
+#
+#     warmUpExercise.jl
+#     plotData.jl
+#     gradientDescent.jl
+#     computeCost.jl
+#
+#  For this exercise, you will not need to change any code in this file,
+#  or any other files other than those mentioned above.
+#
+#  x refers to the population size in 10,000s
+#  y refers to the profit in $10,000s
+#
 using LinearAlgebra
 using DelimitedFiles
 
@@ -13,12 +32,15 @@ function pause()
     readline()
 end
 
+## ==================== Part 1: Basic Function ====================
+# Complete warmUpExercise.m
 println("Running warmUpExercise ...")
 println("5x5 Identity Matrix: ")
 A = warmUpExercise()
 display(A)
 pause()
 
+## ======================= Part 2: Plotting =======================
 println("Plotting Data ...")
 data = readdlm("../lab1data1.txt", ',', Float64)
 X = data[:, 1]

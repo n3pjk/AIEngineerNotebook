@@ -61,9 +61,9 @@ This lab is composed of two exercises, `exercise1.jl`, which covers linear regre
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
-You can use either Octave or MATLAB to complete this lab. Octave is a free alternative to MATLAB. Both are high-level programming languages, well suited for numerical computations. If you wish to use either of these environments but have not installed them yet, see [Lab 0](../../lab_00/README.md), which includes instructions for [Octave](../../lab_00/julia.md).
+You will be using Julia to complete this lab. Julia is a high-level programming language, well suited for numerical computations. If you have not installed Julia yet, see [Lab 0](../../lab_00/README.md), which includes instructions for [Julia](../../lab_00/julia.md).
 
-Information on functions is available from within the Julia GUI by typing `help [function_name]` at the prompt. For example, `help plot` provides information on plotting. Further information for Octave functions can be found in the [Octave Documentation](http://www.gnu.org/software/julia/doc/interpreter/). Similarly, additional MATLAB information is at [MATLAB Documentation](http://www.mathworks.com/help/matlab/?refresh=true).
+Information on functions and macros is available from within the Julia GUI by typing `?` at the `julia>` prompt, to put you into help mode, indicated by the `help>` prompt. For example, `? display` provides information on displaying items. Further information for Julia functions can be found in the [Julia Manual](https://docs.julialang.org). Many great tutorials and learning resources can be found at [Julia Learning](https://julialang.org/learning/).
 
 ## A Simple Julia Function
 
@@ -72,14 +72,14 @@ Information on functions is available from within the Julia GUI by typing `help 
 The first part of Exercise 1 is to become familiar with Julia syntax. In the file `warmUpExercise.jl`, you'll find the outline of a simple Julia function. Modify the section, indicated in the file, to create a 5 X 5 identity matrix by adding the following code
 
 ```julia
-A = eye(5);
+A = matrix{float64}(I, 5, 5);
 ```
 
 When you've finished, you can run `exercise1.jl` by either loading `exercise1.jl` into VS Code and pressing `Ctrl + Shift + Enter` (`Command + Shift + Emter` on Mac), or by openning a terminal, and running
 
 ```bash
 cd labs/lab_01/julia
-julia exercise1.m
+julia exercise1.jl
 ```
 
 The first command changes directory to the `julia` folder under `lab_01`. If you're not sure that you're in the proper folder, you can run
@@ -94,16 +94,12 @@ After executing `exercise1.jl`, you should see
 ```text
 Running warmUpExercise ...
 5x5 Identity Matrix:
-ans =
-
-Diagonal Matrix
-
-   1   0   0   0   0
-   0   1   0   0   0
-   0   0   1   0   0
-   0   0   0   1   0
-   0   0   0   0   1
-
+5x5 Matrix{Float64}:
+ 1.0  0.0  0.0  0.0  0.0
+ 0.0  1.0  0.0  0.0  0.0
+ 0.0  0.0  1.0  0.0  0.0
+ 0.0  0.0  0.0  1.0  0.0
+ 0.0  0.0  0.0  0.0  1.0
 Program paused. Press enter to continue.
 ```
 
