@@ -30,6 +30,7 @@ The easiest way to install Julia packages is to switch to package mode in the RE
 Useful packages to add:
 
 - IJulia - Downloads the Julia Kernel for Jupyter notebooks
+- Plots - Creates plots
 - Pluto - Installs a more advanced notebook infrastructure specifically for Julia
 
 ## Starting Julia

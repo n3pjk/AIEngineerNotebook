@@ -3,13 +3,20 @@ function computeCost(X, y, theta)
     # J = COMPUTECOST(X, y, theta) computes the cost of using theta as the
     # parameter for linear regression to fit the data points in X and y.
 
+    # Initialize some useful values
     m = length(y)
-    J = 0.0
 
-    # TODO: Compute the cost of a particular choice of theta.
-    # h = X * theta
-    # errors = h - y
-    # J = sum(errors .^ 2) / (2 * m)
+    # You need to return the following variables correctly
+    J = 0;
 
+    # ====================== YOUR CODE HERE ======================
+    # Instructions: Compute the cost of a particular choice of theta
+    #               You should set J to the cost.
+
+
+
+
+
+    # =========================================================================
     return J
 end

@@ -1,3 +1,5 @@
+using LinearAlgebra
+
 function warmUpExercise()
     # WARMUPEXERCISE Example function in Julia
     # A = WARMUPEXERCISE() is an example function that returns the 5x5 identity matrix.

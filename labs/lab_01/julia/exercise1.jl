@@ -1,18 +1,30 @@
 # Lab 1
 # Exercise 1: Linear Regression
+using LinearAlgebra
+using DelimitedFiles
+
+include("warmUpExercise.jl")
+include("plotData.jl")
+include("computeCost.jl")
+include("gradientDescent.jl")
+
+function pause()
+    println("Program paused. Press enter to continue.")
+    readline()
+end
 
 println("Running warmUpExercise ...")
 println("5x5 Identity Matrix: ")
 A = warmUpExercise()
-println(A)
+display(A)
+pause()
 
-println("Program paused. Press enter to continue.")
 println("Plotting Data ...")
-
-# data = readdlm("../lab1data1.txt")
-# X = data[:, 1]
-# y = data[:, 2]
-# plotData(X, y)
+data = readdlm("../lab1data1.txt", ',', Float64)
+X = data[:, 1]
+y = data[:, 2]
+plotData(X, y)
+pause()
 
 println("Running Gradient Descent ...")
 

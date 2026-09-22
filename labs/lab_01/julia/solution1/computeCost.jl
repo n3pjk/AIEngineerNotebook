@@ -17,5 +17,6 @@ function computeCost(X, y, theta)
 
     J = (1 / (2 * m)) * sum(sqrErrors)
 
+    # =========================================================================
     return J
 end
