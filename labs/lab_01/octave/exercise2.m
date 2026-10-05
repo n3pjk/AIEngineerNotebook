@@ -90,6 +90,7 @@ figure;
 plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
 xlabel('Number of iterations');
 ylabel('Cost J');
+%print -dsvg ../img/convergence.svg
 
 % Display gradient descent's result
 fprintf('Theta computed from gradient descent: \n');

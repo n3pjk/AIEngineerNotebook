@@ -42,7 +42,7 @@ m = length(y); % number of training examples
 % Plot Data
 % Note: You have to complete the code in plotData.m
 plotData(X, y);
-
+%print -dsvg ../img/training_data.svg
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
@@ -70,6 +70,7 @@ fprintf('%f %f \n', theta(1), theta(2));
 hold on; % keep previous plot visible
 plot(X(:,2), X*theta, '-')
 legend('Training data', 'Linear regression')
+%print -dsvg ../img/linear_regression.svg
 hold off % don't overlay any more plots on this figure
 
 % Predict values for population sizes of 35,000 and 70,000
@@ -109,6 +110,7 @@ J_vals = J_vals';
 figure;
 surf(theta0_vals, theta1_vals, J_vals)
 xlabel('\theta_0'); ylabel('\theta_1');
+%print -dsvg ../img/surface.svg
 
 % Contour plot
 figure;
@@ -117,3 +119,4 @@ contour(theta0_vals, theta1_vals, J_vals, logspace(-2, 3, 20))
 xlabel('\theta_0'); ylabel('\theta_1');
 hold on;
 plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
+%print -dsvg ../img/contour.svg

@@ -30,6 +30,8 @@ The easiest way to install Julia packages is to switch to package mode in the RE
 Useful packages to add:
 
 - IJulia - Downloads the Julia Kernel for Jupyter notebooks
+- JuliaFormatter - Opinionated Julia code formatter. Add package if using the VS Code extension
+- Optim - Provides the Octave/MATLAB equivalent of `fminunc`
 - Plots - Creates plots
 - Pluto - Installs a more advanced notebook infrastructure specifically for Julia
 

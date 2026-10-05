@@ -1,17 +1,14 @@
-# Lab 1 - Linear Regression
+# **Lab 1 - Linear Regression**
 
 [[Home](../../README.md)]
 
-## Introduction
+## **Introduction**
 
-In this lab, you will implement linear regression and get to see it work on
-data. To get started with the lab, `cd` into the appropriate language folder
-in this directory before starting the exercise.
+In this lab, you will implement linear regression and get to see it work on data. To get started with the lab, `cd` into the appropriate language folder in this directory before starting the exercise.
 
-Refer back to [Lab 0](../lab_00/README.md) for instructions on setting up
-your environment.
+Refer back to [Lab 0](../lab_00/README.md) for instructions on setting up your environment.
 
-## Languages
+## **Languages**
 
 - [Julia](julia/README.md)
 - [MATLAB/Octave](octave/README.md)

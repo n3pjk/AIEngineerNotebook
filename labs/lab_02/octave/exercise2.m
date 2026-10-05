@@ -23,10 +23,11 @@ clear ; close all; clc
 %% Load Data
 %  The first two columns contains the X values and the third column
 %  contains the label (y).
-
 data = load('../lab2data2.txt');
 X = data(:, [1, 2]); y = data(:, 3);
 
+%  As in the first exercise, we plot the data to visualize the problem we are
+%  dealing with.
 plotData(X, y);
 
 % Put some labels
@@ -37,9 +38,9 @@ xlabel('Microchip Test 1')
 ylabel('Microchip Test 2')
 
 % Specified in plot order
-legend('y = 1', 'y = 0')
+legend('Accepted', 'Rejected')
+%print("img/chip_data.svg", "-dsvg")
 hold off;
-
 
 %% =========== Part 1: Regularized Logistic Regression ============
 %  In this part, you are given a dataset with data points that are not
@@ -85,34 +86,40 @@ pause;
 %  the training set accuracy vary?
 %
 
-% Initialize fitting parameters
-initial_theta = zeros(size(X, 2), 1);
+% Set regularization parameter lambda to 1 for a moderate level of regularization.
+% 0 will result in no regularization, causing the model to potentially overfit the data.
+% Larger values of lambda will result in more regularization, potentially underfitting the data.
+lambda = [0, 1, 100];
+%figures = ["img/overfitting.svg", "img/chip_boundary.svg", "img/underfitting.svg"];
 
-% Set regularization parameter lambda to 1 (you should vary this)
-lambda = 1;
+for i = 1:length(lambda)
+	% Initialize fitting parameters
+	initial_theta = zeros(size(X, 2), 1);
 
-% Set Options
-options = optimset('GradObj', 'on', 'MaxIter', 400);
+	% Set Options
+	options = optimset('GradObj', 'on', 'MaxIter', 400);
 
-% Optimize
-[theta, J, exit_flag] = ...
-	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
+	% Optimize
+	[theta, J, exit_flag] = ...
+		fminunc(@(t)(costFunctionReg(t, X, y, lambda(i))), initial_theta, options);
 
-% Plot Boundary
-plotDecisionBoundary(theta, X, y);
-hold on;
-title(sprintf('lambda = %g', lambda))
+	% Plot Boundary
+	plotDecisionBoundary(theta, X, y);
+	hold on;
+	title(sprintf('lambda = %g', lambda(i)))
 
-% Labels and Legend
-xlabel('Microchip Test 1')
-ylabel('Microchip Test 2')
+	% Labels and Legend
+	xlabel('Microchip Test 1')
+	ylabel('Microchip Test 2')
 
-legend('y = 1', 'y = 0', 'Decision boundary')
-hold off;
+	legend('Accepted', 'Rejected', 'Decision boundary')
+	%print(figures(i), "-dsvg")
+	hold off;
 
-% Compute accuracy on our training set
-p = predict(theta, X);
+	% Compute accuracy on our training set
+	p = predict(theta, X);
 
-fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
+	fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
+endfor
 
 
