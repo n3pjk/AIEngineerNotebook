@@ -1,4 +1,5 @@
-# Machine Learning Online Class - Lab 2: Logistic Regression
+# Lab 2
+# Exercise 1: Logistic Regression
 #
 #  Instructions
 #  ------------

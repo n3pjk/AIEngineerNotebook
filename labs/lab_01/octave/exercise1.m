@@ -1,5 +1,5 @@
-%% Lab 1
-%  Exercise 1: Linear Regression
+% Lab 1
+% Exercise 1: Linear Regression
 %
 %  Instructions
 %  ------------

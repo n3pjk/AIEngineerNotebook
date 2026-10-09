@@ -1,16 +1,16 @@
-%% Machine Learning Online Class - Exercise 3 | Part 1: One-vs-all
-
+% Lab 3
+% Exercise 3: Multi-class Classification
+%
 %  Instructions
 %  ------------
-% 
+%
 %  This file contains code that helps you get started on the
 %  linear exercise. You will need to complete the following functions
-%  in this exericse:
+%  in this exercise:
 %
 %     lrCostFunction.m (logistic regression cost function)
 %     oneVsAll.m
 %     predictOneVsAll.m
-%     predict.m
 %
 %  For this exercise, you will not need to change any code in this file,
 %  or any other files other than those mentioned above.

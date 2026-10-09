@@ -24,6 +24,7 @@ p = zeros(size(X, 1), 1);
 X = [ones(m, 1) X];
 hx2 = sigmoid(X*Theta1');
 hx2 = [ones(m, 1) hx2];
+%hx2 = [ones(m_hidden, 1) hx2];
 hx3 = sigmoid(hx2*Theta2');
 [val p] = max(hx3, [], 2);
 

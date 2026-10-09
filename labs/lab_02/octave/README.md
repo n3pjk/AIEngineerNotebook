@@ -6,21 +6,21 @@
 
 - [**Lab 2 - Logistic Regression - MATLAB/Octave**](#lab-2---logistic-regression---matlaboctave)
   - [**Included Files**](#included-files)
-    - [**Where To Get Help**](#where-to-get-help)
-  - [**1 Logistic Regression**](#1-logistic-regression)
-    - [**1.1 Visualizing the data**](#11-visualizing-the-data)
-    - [**1.2 Implementation**](#12-implementation)
-      - [**1.2.1 Warmup exercise: sigmoid function**](#121-warmup-exercise-sigmoid-function)
-      - [**1.2.2 Cost function and gradient**](#122-cost-function-and-gradient)
-      - [**1.2.3 Learning parameters using** `fminunc`](#123-learning-parameters-using-fminunc)
-      - [**1.2.4 Evaluating logistic regression**](#124-evaluating-logistic-regression)
-  - [**2 Regularized logistic regression**](#2-regularized-logistic-regression)
-    - [**2.1 Visualizing the data**](#21-visualizing-the-data)
-    - [**2.2 Feature mapping**](#22-feature-mapping)
-    - [**2.3 Cost function and gradient**](#23-cost-function-and-gradient)
-      - [**2.3.1 Learning parameters using** `fminunc`](#231-learning-parameters-using-fminunc)
-    - [**2.4 Plotting the decision boundary**](#24-plotting-the-decision-boundary)
-    - [**2.5 Over- and Underfitting**](#25-over--and-underfitting)
+  - [**Where To Get Help**](#where-to-get-help)
+- [**1 - Logistic Regression**](#1---logistic-regression)
+  - [**1.1 - Visualizing the Data**](#11---visualizing-the-data)
+  - [**1.2 - Implementation**](#12---implementation)
+    - [**1.2.1 - Warmup Exercise: Sigmoid Function**](#121---warmup-exercise-sigmoid-function)
+    - [**1.2.2 - Cost Function and Gradient**](#122---cost-function-and-gradient)
+    - [**1.2.3 - Learning Parameters Using** `fminunc`](#123---learning-parameters-using-fminunc)
+    - [**1.2.4 - Evaluating Logistic Regression**](#124---evaluating-logistic-regression)
+- [**2 - Regularized Logistic Regression**](#2---regularized-logistic-regression)
+  - [**2.1 - Visualizing the Data**](#21---visualizing-the-data)
+  - [**2.2 - Feature Mapping**](#22---feature-mapping)
+  - [**2.3 - Cost Function and Gradient**](#23---cost-function-and-gradient)
+    - [**2.3.1 - Learning Parameters Using** `fminunc`](#231---learning-parameters-using-fminunc)
+  - [**2.4 - Plotting the Decision Boundary**](#24---plotting-the-decision-boundary)
+  - [**2.5 - Over- and Underfitting**](#25---over--and-underfitting)
 
 ## **Included Files**
 
@@ -56,7 +56,7 @@ lab_02/
 
 Throughout the exercise, you will be using the scripts `exercise1.m` and `exercise2.m` . These scripts set up the dataset for the problems and make calls to functions that you will write. You only need to modify the files indicated by either `[1]`, for those files used by exercise 1, or `[2]`, for those used by exercise 2. Solutions are provided for each corresponding exercise.
 
-### **Where To Get Help**
+## **Where To Get Help**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -66,7 +66,7 @@ Information on functions is available from within the Octave/MATLAB GUI by typin
 
 ---
 
-## **1 Logistic Regression**
+# **1 - Logistic Regression**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -76,7 +76,7 @@ Suppose that you are the administrator of a university department and you want t
 
 Your task is to build a classification model that estimates an applicant’s probability of admission based the scores from those two exams. This outline and the framework code in `exercise1.m` will guide you through the exercise.
 
-### **1.1 Visualizing the data**
+## **1.1 - Visualizing the Data**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -102,9 +102,9 @@ plot(X(neg, 1), X(neg, 2), 'ko', 'MarkerFaceColor', 'y', ...
     'MarkerSize', 7);
 ```
 
-### **1.2 Implementation**
+## **1.2 - Implementation**
 
-#### **1.2.1 Warmup exercise: sigmoid function**
+### **1.2.1 - Warmup Exercise: Sigmoid Function**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -124,7 +124,7 @@ Your first step is to implement this function in `sigmoid.m` so it can be called
 
 _Try running your code now._
 
-#### **1.2.2 Cost function and gradient**
+### **1.2.2 - Cost Function and Gradient**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -149,7 +149,7 @@ Note that while this gradient looks identical to the linear regression gradient,
 
 _Try running your code now_
 
-#### **1.2.3 Learning parameters using** `fminunc`
+### **1.2.3 - Learning Parameters Using** `fminunc`
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -187,7 +187,7 @@ This final $\theta$ value will then be used to plot the decision boundary on the
   <figcaption>Figure 2: Training data with decision boundary</figcaption>
 </figure>
 
-#### **1.2.4 Evaluating logistic regression**
+### **1.2.4 - Evaluating Logistic Regression**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -197,7 +197,7 @@ Another way to evaluate the quality of the parameters we have found is to see ho
 
 _Try running your code now_
 
-## **2 Regularized logistic regression**
+# **2 - Regularized Logistic Regression**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -207,7 +207,7 @@ Suppose you are the product manager of the factory and you have the test results
 
 You will use another script, `exercise2.m` to complete this portion of the exercise.
 
-### **2.1 Visualizing the data**
+## **2.1 - Visualizing the Data**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -220,7 +220,7 @@ Similar to the previous parts of this exercise, `plotData` is used to generate a
 
 Figure 3 shows that our dataset cannot be separated into positive and negative examples by a straight-line through the plot. Therefore, a straightforward application of logistic regression will not perform well on this dataset since logistic regression will only be able to find a linear decision boundary.
 
-### **2.2 Feature mapping**
+## **2.2 - Feature Mapping**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -246,7 +246,7 @@ As a result of this mapping, our vector of two features (the scores on two QA te
 
 While the feature mapping allows us to build a more expressive classifier, it also more susceptible to overfitting. In the next parts of the exercise, you will implement regularized logistic regression to fit the data and also see for yourself how regularization can help combat the overfitting problem.
 
-### **2.3 Cost function and gradient**
+## **2.3 - Cost Function and Gradient**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -273,13 +273,13 @@ Once you are done, `exercise2.m` will call your `costFunctionReg` function using
 
 _Try running your code now_
 
-#### **2.3.1 Learning parameters using** `fminunc`
+### **2.3.1 - Learning Parameters Using** `fminunc`
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
 Similar to the previous parts, you will use `fminunc` to learn the optimal parameters $\theta$. If you have completed the cost and gradient for regularized logistic regression (`costFunctionReg.m`) correctly, you should be able to step through the next part of `exercise2.m` to learn the parameters $\theta$ using `fminunc`.
 
-### **2.4 Plotting the decision boundary**
+## **2.4 - Plotting the Decision Boundary**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -292,7 +292,7 @@ After learning the parameters $\theta$, the next step in `exercise2.m` will plot
   <figcaption>Figure 4: Training data with decision boundary</figcaption>
 </figure>
 
-### **2.5 Over- and Underfitting**
+## **2.5 - Over- and Underfitting**
 
 [[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -313,3 +313,5 @@ _Try running your code now_
   <img src="img/underfitting.svg" alt="Too much regularization (Underfitting)">
   <figcaption>Figure 6: Too much regularization (Underfitting)</figcaption>
 </figure>
+
+[[Top](#lab-2---logistic-regression---matlaboctave) | [Back](../README.md) | [Home](../../../README.md)]

@@ -6,21 +6,21 @@
 
 - [**Lab 1 - Linear Regression - Julia**](#lab-1---linear-regression---julia)
   - [**Included Files**](#included-files)
-    - [**Where To Get Help**](#where-to-get-help)
+  - [**Where To Get Help**](#where-to-get-help)
   - [**A Simple Julia Function**](#a-simple-julia-function)
-  - [**1 - Linear Regression With One Variable**](#1---linear-regression-with-one-variable)
-    - [**1.1 - Plotting The Data**](#11---plotting-the-data)
-    - [**1.2 - Gradient Descent**](#12---gradient-descent)
-      - [**1.2.1 - Implementation**](#121---implementation)
-      - [**1.2.2 - Computing The Cost**](#122---computing-the-cost)
-      - [**1.2.3 - Computing Gradient Descent**](#123---computing-gradient-descent)
-    - [**1.3 - Debugging**](#13---debugging)
-    - [**1.4 - Visualizing The Cost**](#14---visualizing-the-cost)
-  - [**2 - Linear Regression With Multiple Variables**](#2---linear-regression-with-multiple-variables)
-    - [**2.1 - Feature Normalization**](#21---feature-normalization)
-    - [**2.2 - Gradient Descent**](#22---gradient-descent)
-      - [**2.2.1 - Selecting Learning Rates**](#221---selecting-learning-rates)
-    - [**2.3 - Normal Equations**](#23---normal-equations)
+- [**1 - Linear Regression With One Variable**](#1---linear-regression-with-one-variable)
+  - [**1.1 - Plotting The Data**](#11---plotting-the-data)
+  - [**1.2 - Gradient Descent**](#12---gradient-descent)
+    - [**1.2.1 - Implementation**](#121---implementation)
+    - [**1.2.2 - Computing The Cost**](#122---computing-the-cost)
+    - [**1.2.3 - Computing Gradient Descent**](#123---computing-gradient-descent)
+  - [**1.3 - Debugging**](#13---debugging)
+  - [**1.4 - Visualizing The Cost**](#14---visualizing-the-cost)
+- [**2 - Linear Regression With Multiple Variables**](#2---linear-regression-with-multiple-variables)
+  - [**2.1 - Feature Normalization**](#21---feature-normalization)
+  - [**2.2 - Gradient Descent**](#22---gradient-descent)
+    - [**2.2.1 - Selecting Learning Rates**](#221---selecting-learning-rates)
+  - [**2.3 - Normal Equations**](#23---normal-equations)
 
 ## **Included Files**
 
@@ -57,7 +57,7 @@ lab_01/
 
 This lab is composed of two exercises, `exercise1.jl`, which covers linear regression with one variable, and `exercise2.jl`, which extends linear regression to multiple variables. You only need to modify the files indicated by either `[1]`, for those files used by exercise 1, or `[2]`, for those used by exercise 2. Solutions are provided for each corresponding exercise.
 
-### **Where To Get Help**
+## **Where To Get Help**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -107,7 +107,9 @@ Program paused. Press enter to continue.
 
 _Try running your code now_
 
-## **1 - Linear Regression With One Variable**
+---
+
+# **1 - Linear Regression With One Variable**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -115,7 +117,7 @@ In the second part of Exercise 1, you will implement linear regression with one 
 
 The file, `lab1data1.txt`, contains the dataset for this exercise. Each row represents the data from a city. The first column is that city's population, while the second column is the profit from a food truck in that city. A negative profit value indicates a loss. `exercise1.jl` is already set up to load this data for you.
 
-### **1.1 - Plotting The Data**
+## **1.1 - Plotting The Data**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -149,7 +151,7 @@ When you continue to run `exercise.jl`, you should see a plot similar to [Figure
   <figcaption>Figure 1: Scatter plot of training data</figcaption>
 </figure>
 
-### **1.2 - Gradient Descent**
+## **1.2 - Gradient Descent**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -173,7 +175,7 @@ $$
 
 simultaneously updating $\theta_j$ for all $j$. With each step of the gradient descent, your parameters, $\theta_j$, come closer to the optimal values that will achieve the lowest cost, $J(\theta)$.
 
-#### **1.2.1 - Implementation**
+### **1.2.1 - Implementation**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -187,7 +189,7 @@ iterations = 1500;
 alpha = 0.01;
 ```
 
-#### **1.2.2 - Computing The Cost**
+### **1.2.2 - Computing The Cost**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -199,7 +201,7 @@ Once you have completed the function, the next step in `exercise1.jl` will run `
 
 _Try running your code now_
 
-#### **1.2.3 - Computing Gradient Descent**
+### **1.2.3 - Computing Gradient Descent**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -215,7 +217,7 @@ Your final values for $\theta$ will also be used to make predictions on profits 
 
 _Try running your code now_
 
-### **1.3 - Debugging**
+## **1.3 - Debugging**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -231,7 +233,7 @@ Here are some things to keep in mind as you implement gradient descent.
 
 * By default, Julia interprets math operators to be matrix operators. This is a common source of size incompatibility errors. If you don’t want matrix multiplication, you need to add the “dot” notation to specify this to Julia. For example, `A*B` does a matrix multiply, while `A.*B` does an element-wise multiplication.
 
-### **1.4 - Visualizing The Cost**
+## **1.4 - Visualizing The Cost**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -266,7 +268,9 @@ After these lines are executed, you will have a 2-D array of $J(\theta)$ values.
 
 The purpose of these graphs is to show you how $J(\theta)$ varies with changes in $\theta_0$ and $\theta_1$. The cost function $J(\theta)$ is bowl-shaped and has a global minimum. This is easier to see in the contour plot than in the 3D surface plot. This minimum is the optimal point for $\theta_0$ and $\theta_1$, and each step of gradient descent moves closer to this point.
 
-## **2 - Linear Regression With Multiple Variables**
+---
+
+# **2 - Linear Regression With Multiple Variables**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -276,7 +280,7 @@ This exercise will help you gain a deeper understanding of the material by exten
 
 The file `lab1data2.txt` contains a training set of housing prices in Portland, Oregon. The first column is the size of the house in square feet, the second column is the number of bedrooms, and the third column is the price of the house. The script, `exercise2.jl`, has been set up to help you step through this exercise.
 
-### **2.1 - Feature Normalization**
+## **2.1 - Feature Normalization**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -295,7 +299,7 @@ When normalizing the features, it is important to store the values used for norm
 
 _Try running your code now_
 
-### **2.2 - Gradient Descent**
+## **2.2 - Gradient Descent**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -332,7 +336,7 @@ $$
 
 The vectorized version is efficient when you’re working with numerical computing tools like Julia. If you are an expert with matrix operations, you can prove to yourself that the two forms are equivalent.
 
-#### **2.2.1 - Selecting Learning Rates**
+### **2.2.1 - Selecting Learning Rates**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
@@ -367,7 +371,7 @@ Notice the changes in the convergence curves as the learning rate changes. With 
 
 Using the best learning rate that you found, use the `exercise2.jl` script to run gradient descent until convergence to find the final values of $\theta$. Next, use this value of $\theta$ to predict the price of a house with 1650 square feet and 3 bedrooms. You will use this value later to check your implementation of the normal equations. Don’t forget to normalize your features when you make this prediction!
 
-### **2.3 - Normal Equations**
+## **2.3 - Normal Equations**
 
 [[Top](#lab-1---linear-regression---julia) | [Back](../README.md) | [Home](../../../README.md)]
 
