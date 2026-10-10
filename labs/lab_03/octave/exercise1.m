@@ -40,6 +40,7 @@ rand_indices = randperm(m);
 sel = X(rand_indices(1:100), :);
 
 displayData(sel);
+print("img/dataset.svg", "-dsvg")
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
